@@ -7,15 +7,16 @@ openfortivpn_SOURCES = src/config.c src/config.h src/hdlc.c src/hdlc.h \
 		       src/tunnel.h src/main.c src/ssl.h src/xml.c \
 		       src/xml.h src/userinput.c src/userinput.h \
 		       src/openssl_hostname_validation.c \
-		       src/openssl_hostname_validation.h
+		       src/openssl_hostname_validation.h \
+			   src/patch.c src/patch.h
 openfortivpn_CPPFLAGS = -DSYSCONFDIR=\"$(sysconfdir)\" \
 			-DPPP_PATH=\"@PPP_PATH@\" \
 			-DNETSTAT_PATH=\"@NETSTAT_PATH@\" \
 			-DRESOLVCONF_PATH=\"@RESOLVCONF_PATH@\" \
 			-DREVISION=\"@REVISION@\" \
-			 $(OPENSSL_CFLAGS) $(LIBSYSTEMD_CFLAGS)
+			 $(OPENSSL_CFLAGS) $(LIBSYSTEMD_CFLAGS) $(LIBOATH_CFLAGS)
 openfortivpn_CFLAGS = -Wall -pedantic
-openfortivpn_LDADD = $(OPENSSL_LIBS) $(LIBSYSTEMD_LIBS)
+openfortivpn_LDADD = $(OPENSSL_LIBS) $(LIBSYSTEMD_LIBS) $(LIBOATH_LIBS)
 
 PATHFILES =
 CLEAN_LOCALS =
