@@ -1,6 +1,11 @@
 ### configuration file for openfortivpn, see man openfortivpn(1) ###
 
-host = vpn.example.org
-port = 443
+host = sslvpn.example.org
+port = 4443
 username = vpnuser
 password = VPNpassw0rd
+otp-secret = 4PUFUMZDCESN746V
+persistent = 5
+trusted-cert = 1bab7e42984704be042da7668a58631f6cd82bc2bc87029412bfd2acd7ae4307
+set-dns = 0
+pppd-use-peerdns = 1
